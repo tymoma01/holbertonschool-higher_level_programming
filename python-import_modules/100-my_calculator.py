@@ -7,6 +7,7 @@ if __name__ == "__main__":
 
     if len_args != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
     
     else:
         if args[2] == "+":
@@ -22,3 +23,4 @@ if __name__ == "__main__":
             print("{} {} {} = {}".format(args[1], args[2], args[3], mul(int(args[1]), int(args[3]))))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
+            sys.exit(1)
