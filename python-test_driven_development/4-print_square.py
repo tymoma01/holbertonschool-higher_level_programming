@@ -4,6 +4,7 @@ here is some documentation
 """
 
 def print_square(size):
+    "Here is some more documentation"
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
