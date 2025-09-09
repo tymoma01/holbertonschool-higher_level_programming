@@ -11,10 +11,9 @@ def text_indentation(text):
     for ch in text:
         buffer += ch
         if ch in ".?:":
-            # print current sentence, stripped of spaces
-            print(buffer.strip())
-            print()
+            print(buffer.strip(), end="")
+            print("\n")
             buffer = ""
-    # print any trailing text after the last delimiter
+
     if buffer.strip():
-        print(buffer.strip())
+        print(buffer.strip(), end="")
