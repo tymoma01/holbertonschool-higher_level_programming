@@ -1,0 +1,25 @@
+Divide all elements of a matrix by a number
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("wqdwkejfnweio.,ewdw,qe.f,:QWe,t/32q./r,")
+wqdwkejfnweio.
+<BLANKLINE>
+,ewdw,qe.
+<BLANKLINE>
+f,:
+<BLANKLINE>
+QWe,t/32q.
+<BLANKLINE>
+/r,
+
+>>> text_indentation(0)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("Heloise")
+Heloise
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
