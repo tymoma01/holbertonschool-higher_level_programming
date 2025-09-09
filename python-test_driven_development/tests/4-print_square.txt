@@ -9,7 +9,6 @@ Divide all elements of a matrix by a number
 ####
 
 >>> print_square(0)
-<BLANKLINE>
 
 >>> print_square(-1)
 Traceback (most recent call last):
