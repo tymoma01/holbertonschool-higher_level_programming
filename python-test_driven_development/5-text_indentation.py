@@ -3,7 +3,7 @@
 here is some documentation
 """
 
-def text_indentation(text) :
+def text_indentation(text):
 
     "Here is some more documentation"
     if not isinstance(text, str):
