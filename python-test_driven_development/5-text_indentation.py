@@ -4,6 +4,7 @@ here is some documentation
 """
 
 def text_indentation(text):
+    
     "Here is some more documentation"
     if not isinstance(text, str):
         raise TypeError("text must be a string")
