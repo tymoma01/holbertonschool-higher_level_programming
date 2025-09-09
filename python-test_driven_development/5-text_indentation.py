@@ -7,10 +7,14 @@ def text_indentation(text):
     "Here is some more documentation"
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for delim in ":.?":
-        text = text.replace(delim, delim + '\n\n')
-    
-    for line in text.split('\n'):
-        line = line.strip()
-       
-        print(line)
+    buffer = ""
+    for ch in text:
+        buffer += ch
+        if ch in ".?:":
+            # print current sentence, stripped of spaces
+            print(buffer.strip())
+            print()
+            buffer = ""
+    # print any trailing text after the last delimiter
+    if buffer.strip():
+        print(buffer.strip())
