@@ -7,8 +7,8 @@ class Square:
     Here is some more documentation
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         return self.__size ** 2
@@ -31,21 +31,21 @@ class Square:
     
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not isinstance(value, tuple[0]) or not isinstance(value, tuple[1]):
+        """Set position with validation (tuple of 2 non-negative ints)."""
+        if (
+            not isinstance(value, tuple)
+            or len(value) != 2
+            or not all(isinstance(n, int) for n in value)
+            or not all(n >= 0 for n in value)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def my_print(self):
-        if self.size == 0:
+        if self.__size == 0:
             print()
-        
-        for _ in range(self.position[1]):
-            print()
-        for _ in range(self.size):
-            for _ in range(self.position[0]):
-                print(" ", end='')
-            print("#" * self.size)
+            return
 
-    
+        print("\n" * self.__position[1], end="")
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
