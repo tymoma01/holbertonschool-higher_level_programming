@@ -48,8 +48,12 @@ class Rectangle:
         res = ""
         if self.width == 0 or self.height == 0:
             return ""
-        for _ in range(self.height):
-            res += "#" * self.width + "\n"
+        for i in range(self.height):
+            if i != self.height - 1:
+                res += "#" * self.width + "\n" 
+            else:
+                res += "#" * self.width
+            
         
         return res
-    __repr__ = __str__
+    
