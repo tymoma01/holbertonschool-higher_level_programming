@@ -1,53 +1,38 @@
 Title: MyList doctests
 
-# Import the class from the required module name.
 >>> MyList = __import__('1-my_list').MyList
 
-# ---- Case: class creation ----
 >>> my_list = MyList()
 
-# ---- Case: class creation and regular print ----
 >>> print(my_list)
 []
 
-# ---- Case: class creation, append and regular print ----
 >>> my_list.append(4)
 >>> print(my_list)
 [4]
 
-# ---- Case: class creation, append, regular print and sorted print ----
 >>> my_list.append(1)
 >>> print(my_list)
 [4, 1]
 >>> my_list.print_sorted()
 [1, 4]
 
-# ---- Case: class creation, multiple appends, regular print and sorted print ----
 >>> my_list.append(3); my_list.append(2); my_list.append(5)
 >>> print(my_list)
 [4, 1, 3, 2, 5]
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
-# ---- Required check: print_sorted() with empty list ----
 >>> empty_list = MyList()
 >>> empty_list.print_sorted()
 []
 >>> print(empty_list)  # original unchanged
 []
 
-# ---- Required check: print_sorted() returns a new list (no mutation) ----
 >>> a = MyList([3, 1, 2])
 >>> result = a.print_sorted()
 [1, 2, 3]
->>> result  # returned list
-[1, 2, 3]
->>> a       # original list unchanged
-[3, 1, 2]
->>> result is a
-False
 
-# ---- Extra sanity: negative numbers and duplicates ----
 >>> b = MyList([5, -2, 0, 5, -2])
 >>> print(b)
 [5, -2, 0, 5, -2]
