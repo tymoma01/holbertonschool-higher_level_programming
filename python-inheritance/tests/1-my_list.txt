@@ -1,0 +1,20 @@
+Add two integers
+>>> print_sorted = __import__('1-my_list').print_sorted
+
+>>> print_sorted([1, 2])
+[1, 2]
+
+>>> print_sorted([100, -2])
+[-2, 100]
+
+>>> print_sorted(2)
+Traceback (most recent call last):
+  File "/Users/t.yamini/hoberton/holberton_exercices/holbertonschool-higher_level_programming/python-inheritance/./1-main.py", line 4, in <module>
+    my_list = MyList(2)
+TypeError: 'int' object is not iterable
+
+>>> print_sorted([100.3, -2])
+[-2, 100.3]
+
+>>> print_sorted([5.9, 4.1])
+[4.1, 5.9]
