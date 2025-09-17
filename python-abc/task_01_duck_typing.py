@@ -26,8 +26,8 @@ class Circle(Shape):
     def __init__(self, radius):
         if not isinstance(radius, int):
             raise TypeError("Radius should be an int")
-        if radius < 0:
-            radius = 0
+        # if radius < 0:
+        #     radius = 0
 
         self.__radius = radius
 
@@ -46,10 +46,10 @@ class Rectangle(Shape):
             raise TypeError("Width should be an int")
         if not isinstance(height, int):
             raise TypeError("Height should be an int")
-        if width < 0:
-            width = 0
-        if height < 0:
-            height = 0
+        # if width < 0:
+        #     width = 0
+        # if height < 0:
+        #     height = 0
         
         self.__width = width
         self.__height = height
