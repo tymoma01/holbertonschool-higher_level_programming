@@ -17,6 +17,8 @@ class Student:
         if not attrs:
             return self.__dict__
 
-        return {attr : self.__dict__[attr] 
-                for attr in attrs 
-                if attr in self.__dict__.keys()}
+        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
+            return {attr : self.__dict__[attr] 
+                    for attr in attrs 
+                    if attr in self.__dict__.keys()}
+        return {}
