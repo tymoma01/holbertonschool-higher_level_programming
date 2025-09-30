@@ -29,7 +29,8 @@ def add_user():
         return jsonify({"error": "Request body must be JSON"}), 404
     
     data = request.get_json(silent=True) or {}
-    username = data['username']
+
+    username = data.get('username')
     if not username:
         return jsonify({"error": "Username is required"}), 404
     
