@@ -20,19 +20,19 @@ def status():
 def get_user(username):
     user = users.get(username)
     if not user:
-        return jsonify({"error":"user not found"}), 404
+        return jsonify({"error": "User not found"}), 404
     return jsonify(user)
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
     if not request.is_json:
-        return jsonify({"error": "Request body must be JSON"}), 404
+        return jsonify({"error": "Request body must be JSON"}), 400
     
     data = request.get_json(silent=True) or {}
 
     username = data.get('username')
     if not username:
-        return jsonify({"error": "Username is required"}), 404
+        return jsonify({"error": "Username is required"}), 400
     
     user_data = {"username":username, "name": data.get("name"), "age": data.get("age"), "city": data.get("city")}
 
