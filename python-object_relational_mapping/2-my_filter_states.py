@@ -28,7 +28,8 @@ if __name__ == '__main__':
 
     # Use format to insert the argument directly (as required by the task)
     query = """SELECT * FROM states
-            WHERE name = '{}' ORDER BY id ASC
+            WHERE BINARY name = '{}'
+            ORDER BY id ASC
             ;""".format(state_name)
     cur.execute(query)
 
