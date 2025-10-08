@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # Parameterized query (MySQLdb uses %s placeholders)
     cur.execute(
         """SELECT * FROM states
-        WHERE name = %s 
+        WHERE name = %s
         ORDER BY id ASC;""",
         (state_name,)
     )
