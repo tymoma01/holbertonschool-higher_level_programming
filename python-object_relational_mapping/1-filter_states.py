@@ -22,7 +22,8 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Make comparison case-sensitive with COLLATE
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;")
+    cur.execute("""SELECT * FROM states WHERE name 
+                LIKE BINARY 'N%' ORDER BY id ASC;""")
 
     rows = cur.fetchall()
     for row in rows:
