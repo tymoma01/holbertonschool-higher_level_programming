@@ -27,7 +27,9 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     # Use format to insert the argument directly (as required by the task)
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(state_name)
+    query = """SELECT * FROM states 
+                WHERE name = '{}' ORDER BY id ASC
+            ;""".format(state_name)
     cur.execute(query)
 
     # Fetch and display results
