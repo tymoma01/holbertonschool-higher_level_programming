@@ -1,38 +1,49 @@
 #!/usr/bin/python3
 """
-    Script to get all states from the database hbtn_0e_0_usa
-    with name starting with N
+Script to get all states from the database hbtn_0e_0_usa
+with names starting with 'N' (uppercase only).
 
-    ARGUMENTS :
-            mysql username
-            mysql password
-            database name
-    SORTED BY :
-        ASC states.id
+Arguments:
+    mysql username
+    mysql password
+    database name
+
+Sorted by:
+    ASC states.id
 """
 
-if __name__ == '__main__':
-    import MySQLdb
-    import sys
+import MySQLdb
+import sys
 
-    # Recover argument from user
+if __name__ == '__main__':
+    # Recover arguments from user
     user = sys.argv[1]
     pswd = sys.argv[2]
     db_name = sys.argv[3]
 
-    # connect database
-    db = MySQLdb.connect(host='localhost', user=user,
-                         passwd=pswd, db=db_name, port=3306)
+    # Connect to database
+    db = MySQLdb.connect(
+        host='localhost',
+        user=user,
+        passwd=pswd,
+        db=db_name,
+        port=3306
+    )
 
-    # create cursor
+    # Create cursor
     cur = db.cursor()
 
-    # executing MySQL Queries in Python
-    cur.execute("SELECT * FROM states WHERE states.name \
-                LIKE BINARY 'N%' ORDER BY states.id ASC")
+    # Execute MySQL query
+    cur.execute(
+        "SELECT * FROM states "
+        "WHERE name LIKE BINARY 'N%' "
+        "ORDER BY id ASC;"
+    )
 
-    # display
-    all_statesN = cur.fetchall()
-    for row in all_statesN:
+    # Display results
+    for row in cur.fetchall():
         print(row)
-        
+
+    # Close connections
+    cur.close()
+    db.close()
