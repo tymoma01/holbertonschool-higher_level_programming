@@ -35,3 +35,4 @@ if __name__ == '__main__':
     all_statesN = cur.fetchall()
     for row in all_statesN:
         print(row)
+        
